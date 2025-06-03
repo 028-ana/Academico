@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Página Inicial</title>
-    <!-- Incluindo Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- Incluindo Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <a class="navbar-brand" href="/">Academico</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -71,49 +68,17 @@
                 </li>
             </ul>
         </div>
-    </nav>
+</nav>
     <div class="container mt-5">
         <div class="jumbotron text-center">
             <h1 class="display-4">Olá, é bom te ver por aqui</h1>
-            <p class="lead">Esta é a página inicial da Acadêmico</p>
+            <p class="lead">Esta é a página inicial da Biblioteca</p>
             <p class="lead">Seja Bem Vindo(A)</p>
         </div>
     </div>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">CPF</th>
-                <th scope="col">Data Nascimento</th>
-                <th scope="col">Cidade</th>
-                <th scope="col">Ocupação</th>
-                <th scope="col">Excluir</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            {% for pessoa in pessoas %}
-            <tr>
-                <td>{{ pessoa.nome }}</td>
-                <td>{{ pessoa.cpf }}</td>
-                <td>{{ pessoa.data_nasc }}</td>
-                <td>{{ pessoa.cidade }}</td>
-                <td>{{ pessoa.ocupacao }}</td>
-                <td>
-                    <a href="{% url 'delete_pessoa' id=pessoa.id %}"
-                        onclick="return confirm('Tem certeza que deseja excluir esta pessoa?')">
-                        Excluir
-                    </a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-        <!-- Incluindo jQuery e Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </table>
+<!-- Incluindo jQuery e Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>

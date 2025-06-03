@@ -1,35 +1,18 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render,redirect,get_object_or_404
 from .models import *
-from .forms import *
 from django.views import View
 from django.contrib import messages
-
-from django.views import View
-from django.shortcuts import redirect
-from django.contrib import messages
-from app.models import Pessoas
 
 # Create your views here.
 class IndexView(View):
     def get(self, request, *args, **kwargs):
-        pessoas = Pessoas.objects.all()
-        return render(request, 'index.html', {'pessoas' : pessoas})
-    def post(self, request):
-        pass
+        return render(request, 'index.html') 
     
 
 class PessoasView(View):
     def get(self, request, *args, **kwargs):
         pessoas = Pessoas.objects.all()
-        return render(request, 'pessoas.html', {'pessoas' : pessoas})
-    
-
-class DeletePessoaView(View):
-    def get(self, request, id, *args, **kwargs):
-        pessoa = Pessoas.objects.get(id=id)
-        pessoa.delete()
-        messages.success(request, 'Pessoa excluída com sucesso!')
-        return redirect('pessoas')  # Certifique-se de que 'pessoas' é o nome correto da URL
+        return render(request, 'pessoas.html', {'pesssoas' : pessoas})
 
 class AreaSaberView(View):
     def get(self, request, *args, **kwargs):

@@ -21,7 +21,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', IndexView.as_view(), name='index'),
+    path('', TemplateView.as_view(template_name='index.html'), name='index'),
     path('area_saber/', AreaSaberView.as_view(), name='area_saber'),
     path('avaliacoes/', AvaliacoesView.as_view(), name='avaliacao'),
     path('cidades/', CidadeView.as_view(), name='cidade'),
@@ -35,7 +35,10 @@ urlpatterns = [
     path('ocupacao/', OcupacaoView.as_view(), name='ocupacao'),
     path('periodo_cursos/', PeriodoCursoView.as_view(), name='periodo_curso'),
     path('pessoas/', PessoasView.as_view(), name='pessoa'),
-    path('pessoas/delete/<int:id>/', DeletePessoaView.as_view(), name='delete_pessoa'),
     path('tipo_avaliacao/', TipoAvaliacaoView.as_view(), name='tipo_avaliacao'),
     path('turmas/', TurmaView.as_view(), name='turma'),
+
+
+
+
 ]
